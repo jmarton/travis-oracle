@@ -27,7 +27,12 @@ the current license agreement for [Oracle Database Express Edition][].
    - ORACLE_FILE=oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip
    - ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
    - ORACLE_SID=XE
+   #- ORACLE_DOWNLOAD_DIR=/tmp/download/location
    ```
+
+The ```ORACLE_DOWNLOAD_DIR``` environment variable is optional. If set and non-empty, the
+[Oracle Database Express Edition][] installer will be downloaded there.
+This can also be utilized for [caching on Travis CI][].
 
 3. Download and extract the [latest release][] into your project. For example,
 
@@ -58,6 +63,7 @@ has both normal and DBA access without a password, i.e. `/` and `/ AS SYSDBA`.
 `$ORACLE_HOME/rdbms/public`, respectively.
 
 [environment variables]: https://docs.travis-ci.com/user/environment-variables/
+[caching on Travis CI]: https://docs.travis-ci.com/user/caching/
 [latest release]: https://github.com/cbandy/travis-oracle/releases/latest
 [OCCI]: http://www.oracle.com/pls/topic/lookup?ctx=xe112&id=LNCPP
 [OCI]: http://www.oracle.com/pls/topic/lookup?ctx=xe112&id=LNOCI
